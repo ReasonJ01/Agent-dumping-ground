@@ -1,0 +1,23 @@
+[package]
+name = "krakatoa-intro"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+fframes = { workspace = true, features = ["compile-time-svgtree", "cli"] }
+
+[target.'cfg(not(any(target_os = "macos", target_arch = "wasm32")))'.dependencies]
+fframes_skia_renderer = { workspace = true, features = ["vulkan", "cli"] }
+
+[target.'cfg(not(any(target_arch = "wasm32", windows)))'.dependencies]
+fframes = { workspace = true, features = ["h264", "h265", "vpx", "libav-agree-gpl", "build-portable"] }
+
+[lib]
+name = "krakatoa_intro"
+path = "src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "krakatoa-intro"
+path = "src/main.rs"
