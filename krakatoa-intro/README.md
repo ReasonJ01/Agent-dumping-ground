@@ -50,4 +50,8 @@ the map and film grain are shaders evaluated on every frame.
   from the fframes `fframes-intro` example (MIT).
 - `dynamic_media/sfx_*.mp3` are copied from the fframes `fframes-intro` example; their licence
   is not stated there, so check before publishing the video outside the team.
-- `dynamic_media/drone.wav` is a placeholder hum generated with ffmpeg. Swap in real music.
+- `dynamic_media/music.wav`: "Interloper" by Kevin MacLeod ([incompetech.com](https://incompetech.com)),
+  licensed under [Creative Commons: By Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
+  Pre-processed with ffmpeg: loudness-normalised, ramped from -26 dB to full over 24 s, hard stop
+  just before the title braam. **Credit Kevin MacLeod wherever the video is shown.**
+- `dynamic_media/drone.wav`: a low hum generated with ffmpeg, under the title hold.

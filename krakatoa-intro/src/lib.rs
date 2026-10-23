@@ -184,7 +184,10 @@ impl Video for KrakatoaIntro {
     fn audio(&self) -> AudioMap<'_> {
         let sfx = |name: &'static str, at: f32, gain: f32| AudioTrack::new(name, Second(at)..Eof).gain_db(gain);
         let mut tracks = vec![
-            AudioTrack::new("drone.wav", Second(0.0)..Eof).gain_db(-4.0).fade_out(2.0),
+            // "Interloper", Kevin MacLeod (incompetech.com), CC BY 4.0; pre-ramped quiet → full, hard stop before the braam
+            AudioTrack::new("music.wav", Second(0.0)..Eof),
+            // low hum under the title hold once the braam has decayed
+            AudioTrack::new("drone.wav", Second(TITLE + 1.6)..Eof).gain_db(-8.0).fade_in(1.5).fade_out(1.5),
             AudioTrack::new("sfx_typing.mp3", Second(COLD + 0.5)..Second(COLD + 1.7)).gain_db(-7.0),
             AudioTrack::new("sfx_typing.mp3", Second(COLD + 1.9)..Second(COLD + 3.0)).gain_db(-7.0),
             AudioTrack::new("sfx_typing.mp3", Second(COLD + 3.1)..Second(COLD + 3.8)).gain_db(-7.0),
