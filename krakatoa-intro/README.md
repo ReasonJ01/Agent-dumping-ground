@@ -4,6 +4,8 @@ A 32 second, MGSV-style mission opening for the Krakatoa squad's end of sprint d
 (sprint 3990, "Futalognkosaurus"). Built with [fframes](https://github.com/dmtrkovalenko/fframes)
 (Rust + SVG, rendered with Skia).
 
+The rendered video is [`krakatoa-intro.mp4`](krakatoa-intro.mp4) (1080p30, re-encoded to 20 MB).
+
 | time | scene | what happens |
 | --- | --- | --- |
 | 0.0–4.5s | `ColdOpen` | "Incoming transmission": squad, sprint dates and "End of sprint demos" typed out |
